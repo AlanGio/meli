@@ -2,11 +2,14 @@ var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
+//var queryString = require('query-string');
+
 var logger = require('morgan');
 var sassMiddleware = require('node-sass-middleware');
 
 var indexRouter = require('./routes/index');
 var listRouter = require('./routes/list');
+var vipRouter = require('./routes/vip');
 
 var app = express();
 
@@ -20,6 +23,7 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+//app.use(queryString());
 app.use(sassMiddleware({
   src: path.join(__dirname, 'public'),
   dest: path.join(__dirname, 'public'),
@@ -29,7 +33,8 @@ app.use(sassMiddleware({
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/list', listRouter);
+app.use('/items/:id', vipRouter);
+app.use('/items', listRouter);
 
 app.use(express.static(__dirname + '/views'));
 
@@ -49,5 +54,9 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+
+//app.get('/list/:id', routes.sample);
+
 
 module.exports = app;

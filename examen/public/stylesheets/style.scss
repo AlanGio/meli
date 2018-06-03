@@ -2,9 +2,20 @@
 
 body {
 
+
+	// GLOBAL
+
 	background-color: $gray-lighter;
-	color: $gray-dark;
 	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	color: $gray-dark;
+
+	a {
+		color: $gray-dark;
+	}
+
+	.btn-primary {
+		background-color: $brand-secondary;
+	}
 
 	header {
 		&.container-fluid {
@@ -31,9 +42,6 @@ body {
 	}
 
 
-
-	// LIST
-
 	.breadcrumb {
 
 		margin: 16px 0;
@@ -50,6 +58,8 @@ body {
 		}
 	}
 
+
+	// LIST
 
 	.list {
 
@@ -70,14 +80,19 @@ body {
 
 					h2 {
 						font-size: 24px;
-						margin-bottom: 32px;
+						margin: 16px 0 32px;
 					}
 
 					h3 {
 						font-size: 18px;
 					}
 
+					.free-ship {
+						margin-left: 8px;
+					}
+
 					p {
+						margin: 16px 0;
 						font-size: 12px;
 						color: $gray-light;
 					}
@@ -102,4 +117,66 @@ body {
 			}
 		}
 	}
+
+	// VIP
+
+	.vip {
+
+		.top-product {
+			div {
+				&.top-product-container {
+					background-color: white;
+					padding:32px;
+
+					.product-price {
+						padding-top: 32px;
+						padding-right: 32px;
+
+						p {
+							font-size: 14px;
+							margin-bottom: 16px;
+						}
+
+						h1 {
+							font-size: 24px;
+							font-weight: 600;
+						}
+
+						h2 {
+							font-size: 46px;
+							margin: 32px 0;
+						}
+
+						.buy-button {
+							width: 100%;
+						}
+
+
+					}
+				}
+			}
+		}
+
+		.bottom-product {
+
+			div {
+				&.bottom-product-container {
+					background-color: white;
+					padding:32px;
+					h2 {
+						font-size: 28px;
+						margin-bottom: 32px;
+					}
+
+					p {
+						color: $gray-light;
+						font-size: 16px;
+						white-space: pre;
+
+					}
+				}
+			}
+		}
+	}
+
 }

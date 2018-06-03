@@ -1,7 +1,11 @@
 body {
   background-color: #eeeeee;
-  color: #333333;
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; }
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  color: #333333; }
+  body a {
+    color: #333333; }
+  body .btn-primary {
+    background-color: #3483FA; }
   body header.container-fluid {
     background-color: #FFE600;
     padding: 10px 0; }
@@ -32,10 +36,13 @@ body {
         border-radius: 4px; }
       body .list ul.list-container > li h2 {
         font-size: 24px;
-        margin-bottom: 32px; }
+        margin: 16px 0 32px; }
       body .list ul.list-container > li h3 {
         font-size: 18px; }
+      body .list ul.list-container > li .free-ship {
+        margin-left: 8px; }
       body .list ul.list-container > li p {
+        margin: 16px 0;
         font-size: 12px;
         color: #999999; }
       body .list ul.list-container > li:after {
@@ -49,5 +56,32 @@ body {
         border-bottom: 1px solid #eeeeee; }
       body .list ul.list-container > li:last-child:after {
         border-color: transparent; }
+  body .vip .top-product div.top-product-container {
+    background-color: white;
+    padding: 32px; }
+    body .vip .top-product div.top-product-container .product-price {
+      padding-top: 32px;
+      padding-right: 32px; }
+      body .vip .top-product div.top-product-container .product-price p {
+        font-size: 14px;
+        margin-bottom: 16px; }
+      body .vip .top-product div.top-product-container .product-price h1 {
+        font-size: 24px;
+        font-weight: 600; }
+      body .vip .top-product div.top-product-container .product-price h2 {
+        font-size: 46px;
+        margin: 32px 0; }
+      body .vip .top-product div.top-product-container .product-price .buy-button {
+        width: 100%; }
+  body .vip .bottom-product div.bottom-product-container {
+    background-color: white;
+    padding: 32px; }
+    body .vip .bottom-product div.bottom-product-container h2 {
+      font-size: 28px;
+      margin-bottom: 32px; }
+    body .vip .bottom-product div.bottom-product-container p {
+      color: #999999;
+      font-size: 16px;
+      white-space: pre; }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,9 +1,19 @@
 var express = require('express');
-var router = express.Router();
+var request = require('../request');
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.render('list', { title: 'Listados - MercadoLibre' });
-});
+module.exports = function(req, res, next) {
 
-module.exports = router;
+	var uri = '/sites/MLA/search?q='+req.query.search;
+	var safeQuery = encodeURI(uri); 
+
+	var options = {
+	  host: 'api.mercadolibre.com',
+	  path: safeQuery
+	};
+
+	request(options, function(data) {
+		console.log(data);
+		res.render('list', { title: 'Listados - MercadoLibre', search: req.query.search, results: data.results});
+	});
+
+}

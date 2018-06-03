@@ -1,1 +1,28 @@
-include list.html
+extends layout
+
+block content
+
+  nav.container-fluid
+    .row.justify-content-center
+      .col-md-10.breadcrumb
+        a(href='#') Electrónica, Audio y Video
+        i.fas.fa-chevron-right
+        a(href='#') Ipod
+
+  section.container-fluid.list
+    .row.justify-content-center
+      ul.col-10.list-container
+
+        each result in results
+          li.row.item
+            .col-2
+              img.img-fluid.item-img(src=result.thumbnail, alt=result.title)
+            .col-8
+              h2
+                a(href='/items/' + result.id)= ('$ ' + result.price)
+                - if (result.shipping.free_shipping)
+                  img.img-fluid.free-ship(src='/images/ic_shipping.png', alt='Envio Gratis', title='¡Envío Gratis!')
+              h3
+                a(href='/items/' + result.id)= result.title
+            .col-2
+              p= result.address.state_name
