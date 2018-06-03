@@ -1,0 +1,53 @@
+body {
+  background-color: #eeeeee;
+  color: #333333;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; }
+  body header.container-fluid {
+    background-color: #FFE600;
+    padding: 10px 0; }
+    body header.container-fluid > .row {
+      margin: 0; }
+      body header.container-fluid > .row .search-box .search-input {
+        font-size: 18px; }
+  body > .container-fluid > .row {
+    margin-left: 0;
+    margin-right: 0; }
+  body .breadcrumb {
+    margin: 16px 0;
+    background-color: transparent; }
+    body .breadcrumb a, body .breadcrumb i {
+      font-size: 14px;
+      color: #999999; }
+    body .breadcrumb i {
+      margin: 0 8px;
+      line-height: 20px; }
+  body .list ul.list-container {
+    background-color: white; }
+    body .list ul.list-container > li {
+      position: relative;
+      padding: 16px; }
+      body .list ul.list-container > li .item-img {
+        min-width: 180px;
+        border: 1px solid white;
+        border-radius: 4px; }
+      body .list ul.list-container > li h2 {
+        font-size: 24px;
+        margin-bottom: 32px; }
+      body .list ul.list-container > li h3 {
+        font-size: 18px; }
+      body .list ul.list-container > li p {
+        font-size: 12px;
+        color: #999999; }
+      body .list ul.list-container > li:after {
+        content: "";
+        position: absolute;
+        left: 16px;
+        bottom: 0;
+        height: 1px;
+        width: calc(100% - 32px);
+        /* or 100px */
+        border-bottom: 1px solid #eeeeee; }
+      body .list ul.list-container > li:last-child:after {
+        border-color: transparent; }
+
+/*# sourceMappingURL=style.css.map */
