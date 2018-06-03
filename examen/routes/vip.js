@@ -15,10 +15,21 @@ module.exports = function(req, res, next) {
 	  path: '/items/'+req.params.id+'/description'
 	};
 
+
+
 	request(options, function(data) {
 
+		var optionsCategory = {
+		  host: 'api.mercadolibre.com',
+		  path: '/categories/'+data.category_id
+		};
+
 		request(optionsDescription, function(dataDesc) {
-			res.render('vip', { title: 'VIP - MercadoLibre', item: data, itemDescription: dataDesc});
+
+			request(optionsCategory, function(dataCat) {
+
+				res.render('vip', { title: 'VIP - MercadoLibre', item: data, itemDescription: dataDesc, itemCategory: dataCat});
+			});
 		});
 
 	});

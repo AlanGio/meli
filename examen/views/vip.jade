@@ -2,6 +2,20 @@ extends layout
 
 block content
 
+  nav.container-fluid
+    .row.justify-content-center
+      .col-md-10.breadcrumb
+
+        each category, index in itemCategory.path_from_root
+
+          if index < itemCategory.path_from_root.length - 1
+            a(href='#')= category.name
+            i.fas.fa-chevron-right
+          else
+            a(href='#')
+             b= category.name
+
+
   section.container-fluid.vip
     .row.justify-content-center.top-product
       .col-10.top-product-container
