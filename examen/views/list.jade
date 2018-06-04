@@ -14,7 +14,7 @@ block content
                 img.img-fluid.item-img(src=result.thumbnail, alt=result.title)
             .col-12.col-md-8
               h2
-                a(href='/items/' + result.id)= ('$ ' + result.price)
+                a(href='/items/' + result.id)= result.price
                 - if (result.shipping.free_shipping)
                   img.img-fluid.free-ship(src='/images/ic_shipping.png', alt='Envio Gratis', title='¡Envío Gratis!')
               h3

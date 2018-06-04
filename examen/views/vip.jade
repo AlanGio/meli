@@ -26,7 +26,7 @@ block content
             .product-price
               p= ('vendidos ' + item.condition == 'used' ? 'Usado' : 'Nuevo' + ' - ' + item.sold_quantity + ' vendidos')
               h1= item.title
-              h2= ('$' + item.price)
+              h2= item.price
               a.btn.btn-primary.buy-button(href='#') Comprar
     .row.justify-content-center.bottom-product
       .col-12.col-md-10.bottom-product-container

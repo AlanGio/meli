@@ -18,4 +18,5 @@ module.exports = function request(options, callback) {
   }
 
   https.request(options, handler).end();
+  
 };

@@ -1,5 +1,17 @@
 var express = require('express');
 var request = require('../request');
+var numeral = require('numeral');
+
+numeral.register('locale', 'ars', {
+  delimiters: {
+      thousands: '.',
+      decimal: ','
+  },
+  currency: {
+      symbol: '$'
+  }
+});
+numeral.locale('ars');
 
 module.exports = function(req, res, next) {
 
@@ -12,6 +24,11 @@ module.exports = function(req, res, next) {
 	};
 
 	request(options, function(data) {
+
+		for(var i = 0; i < data.results.length; i++) {
+			data.results[i].price = numeral(data.results[i].price).format('$0,0[.]00');
+		}
+
 		res.render('list', { title: 'Listados - MercadoLibre', search: req.query.search, results: data.results});
 	});
 
