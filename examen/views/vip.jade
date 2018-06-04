@@ -18,17 +18,17 @@ block content
 
   section.container-fluid.vip
     .row.justify-content-center.top-product
-      .col-10.top-product-container
+      .col-12.col-md-10.top-product-container
         .row
-          .col-8.image-container.text-center
+          .col-12.col-sm-8.image-container.text-center
             img.img-fluid.item-img(src=item.pictures[0].url, alt=item.title)
-          .col-4
+          .col-12.col-sm-4
             .product-price
               p= ('vendidos ' + item.condition == 'used' ? 'Usado' : 'Nuevo' + ' - ' + item.sold_quantity + ' vendidos')
               h1= item.title
               h2= ('$' + item.price)
               a.btn.btn-primary.buy-button(href='#') Comprar
     .row.justify-content-center.bottom-product
-      .col-10.bottom-product-container
+      .col-12.col-md-10.bottom-product-container
         h2 Descripción del Producto
         p= itemDescription.plain_text

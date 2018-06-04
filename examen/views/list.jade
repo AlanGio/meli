@@ -9,14 +9,15 @@ block content
 
         each result in results
           li.row.item
-            .col-2
-              img.img-fluid.item-img(src=result.thumbnail, alt=result.title)
-            .col-8
+            .col-12.col-md-2.text-center
+              a(href='/items/' + result.id)
+                img.img-fluid.item-img(src=result.thumbnail, alt=result.title)
+            .col-12.col-md-8
               h2
                 a(href='/items/' + result.id)= ('$ ' + result.price)
                 - if (result.shipping.free_shipping)
                   img.img-fluid.free-ship(src='/images/ic_shipping.png', alt='Envio Gratis', title='¡Envío Gratis!')
               h3
                 a(href='/items/' + result.id)= result.title
-            .col-2
+            .col-12.col-md-2
               p= result.address.state_name

@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 //var queryString = require('query-string');
 
+
 var logger = require('morgan');
 var sassMiddleware = require('node-sass-middleware');
 
@@ -16,7 +17,6 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
-
 
 
 app.use(logger('dev'));
@@ -54,9 +54,6 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
-
-//app.get('/list/:id', routes.sample);
 
 
 module.exports = app;
